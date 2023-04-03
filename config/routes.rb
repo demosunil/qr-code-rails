@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
   # Write your routes here. URLs to support:
   
-  # /text
+  # /text 
   # /url
   # /wifi
   # /sms
-  
+  get("/text", {:controller => "application", :action => "process_text"})
+
+  get("/url", {:controller => "application", :action => "process_url"})
+  get("/wifi", {:controller => "application", :action => "process_wifi"})
+
+  get("/sms", {:controller => "application", :action => "process_sms"})
+
+
   get("/", {:controller => "application", :action => "homepage"})
+
 
   # Solutions below.
 
